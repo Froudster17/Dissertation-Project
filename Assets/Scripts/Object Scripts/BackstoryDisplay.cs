@@ -14,5 +14,6 @@ public class BackstoryDisplay : MonoBehaviour
     public void HideDisplay()
     {
         animator.SetTrigger("Hide");
+        FindObjectOfType<AudioManager>().Play("Start");
     }
 }
