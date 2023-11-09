@@ -25,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
             lastMovement = movement; // Update the last non-zero movement
             OnAnimatorMove();
         }
-
-
     }
 
     private void FixedUpdate()

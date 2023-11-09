@@ -9,6 +9,7 @@ public class InteractionDisplay : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         animator.SetTrigger("Show");
+        FindObjectOfType<AudioManager>().Play("Interaction");
     }
 
     private void OnTriggerExit2D(Collider2D collision)
