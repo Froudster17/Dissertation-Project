@@ -5,18 +5,22 @@ using UnityEngine.UI;
 
 public class TextDisplay : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator[] animator;
     [SerializeField] private Text text;
     [SerializeField] private string displayText;
-
+    private bool textShown;
     private bool playerHere;
 
     private void Update()
     {
-        if (playerHere == true && Input.GetKeyDown(KeyCode.E))
+        if (playerHere == true && Input.GetKeyDown(KeyCode.E) && textShown == false)
         {
-            animator.SetTrigger("Show");
+            foreach (Animator animator in animator)
+            {
+                animator.SetTrigger("Show");
+            }
             text.text = displayText;
+            textShown = true;
         }
     }
 
@@ -31,7 +35,11 @@ public class TextDisplay : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        animator.SetTrigger("Hide");
+        foreach (Animator animator in animator)
+        {
+            animator.SetTrigger("Hide");
+        }
         playerHere = false;
+        textShown = false;
     }
 }
