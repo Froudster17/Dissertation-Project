@@ -8862,6 +8862,16 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     source: {fileID: 0}
+  - name: Click
+    clip: {fileID: 8300000, guid: 1df064671bd3a404a889f7bcbef26273, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Declined
+    clip: {fileID: 8300000, guid: 02e2e99132f917844ac7b8a2780881d7, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1668645982
 Transform:
   m_ObjectHideFlags: 0
@@ -9366,6 +9376,7 @@ MonoBehaviour:
   - {fileID: 136243914}
   text: {fileID: 1763833752}
   displayText: Why did I lock this again?
+  currentPassword: 9999
 --- !u!114 &1781667304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9778,9 +9789,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e71a5f1aba5804d9a10d85d3ff4d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: []
+  animator:
+  - {fileID: 930671451}
   text: {fileID: 1763833752}
   displayText: Hmmmm, the door seems to be jamed??
+  currentPassword: 
 --- !u!1 &1928988298
 GameObject:
   m_ObjectHideFlags: 0
