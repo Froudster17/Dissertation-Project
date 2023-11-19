@@ -9,6 +9,7 @@ public class TextDisplay : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private string displayText;
     [SerializeField] private string currentPassword;
+    [SerializeField] private GameObject objectToShow;
     private bool textShown;
     private bool playerHere;
 
@@ -23,6 +24,15 @@ public class TextDisplay : MonoBehaviour
             text.text = displayText;
             textShown = true;
             FindObjectOfType<Keypad>().currentPasword = currentPassword;
+
+            if (objectToShow == null)
+            {
+                return;
+            } 
+            else
+            {
+                FindObjectOfType<Keypad>().objectToShowKeypad = this.objectToShow;
+            }
         }
     }
 
