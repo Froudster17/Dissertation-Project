@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
         if (playerHere == true && Input.GetKeyDown(KeyCode.E) && objectNeeded.active)
         {
             Debug.Log("Door open");
-            textDisplay.enabled = !textDisplay.enabled;
+            //textDisplay.enabled = !textDisplay.enabled;
             boxCollider2D.enabled = !boxCollider2D.enabled;
             boxCollider2D2.enabled = !boxCollider2D2.enabled;
             interactionDisplay.active = !interactionDisplay.active;

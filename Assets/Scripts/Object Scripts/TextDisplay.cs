@@ -11,7 +11,7 @@ public class TextDisplay : MonoBehaviour
     [SerializeField] private string currentPassword;
     [SerializeField] private GameObject objectToShow;
     private bool textShown;
-    private bool playerHere;
+    public bool playerHere;
 
     private void Update()
     {
@@ -47,11 +47,14 @@ public class TextDisplay : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (Animator animator in animator)
+        if (collision.gameObject.tag == "Player")
         {
-            animator.SetTrigger("Hide");
+            foreach (Animator animator in animator)
+            {
+                animator.SetTrigger("Hide");
+            }
+            playerHere = false;
+            textShown = false;
         }
-        playerHere = false;
-        textShown = false;
     }
 }
